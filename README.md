@@ -27,7 +27,7 @@ After cloning the repo, run [`bin/setup`](bin/setup) to set up things like Git h
 
 ## Contributing
 
-Bug reports and pull requests are welcome on Gitlab at (LINK!). However, I'm very busy so YMMV.
+Bug reports and pull requests are welcome on Gitlab at [https://gitlab.com/tygerbytes/RunbyOnRails](https://gitlab.com/tygerbytes/RunbyOnRails). However, I'm very busy so YMMV.
 
 Contribute your ideas at [@runbypace](https://twitter.com/runbypace).
 
