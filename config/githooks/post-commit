@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+#
+# POST COMMIT HOOK
+#
+
+# Redirect output to stderr.
+exec 1>&2
+
+# Output COMMIT hash to .env file if we're on master
+gitCommitFile=.gitcommit.env
+branch=$(git rev-parse --abbrev-ref HEAD)
+if [ "$branch" = "master" ]
+then
+    echo \# This file was created by a post commit hook > ${gitCommitFile}
+    echo COMMIT=`git rev-parse --verify HEAD` >> ${gitCommitFile}
+    echo Wrote commit hash to \"${gitCommitFile}\"
+fi

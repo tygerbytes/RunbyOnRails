@@ -1,0 +1,23 @@
+
+
+<div class="container">
+
+  <%= render 'navbar' %>
+
+  <div class="jumbotron">
+    <p>To fully benefit from your <strong><%= @pace.run_type.description %></strong>, your pace should be</p>
+    <h1><%= @pace.pace_data_mi %></h1>
+  </div>
+
+  <div class="col-lg-12">
+    <p>Would you like to help make Runby Pace better?</p>
+    <ul>
+      <li>Suggest features: <a href="https://twitter.com/runbypace">@runbypace</a></li>
+      <li>Donate: <a href="https://paypal.me/tygerbytes/5">paypal.me/tygerbytes</a></li>
+    </ul>
+  </div>
+
+
+</div>
+
+<%= render 'footer' %>

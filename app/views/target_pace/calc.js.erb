@@ -1,0 +1,4 @@
+
+$("#calculated_targets").html("<%= escape_javascript(render partial: 'calc', locals: { pace: @pace, activated_toggles: @activated_toggles } )%>");
+
+$("#print_preview_button").html("<%= escape_javascript(link_to 'Print preview', target_pace_calc_url(@_request.parameters), class: 'btn btn-info')%>");

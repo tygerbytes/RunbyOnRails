@@ -1,0 +1,19 @@
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">&#x1F3C3; Runby Pace</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li role="presentation" <%= class_list_if(@active_nav == 'index', 'active') %>"><a href="/">Home</a></li>
+        <li role="presentation" <%= class_list_if(@active_nav == 'about', 'active') %>><%= link_to('About','/about') %></li>
+      </ul>
+    </div>
+  </div>
+</nav>

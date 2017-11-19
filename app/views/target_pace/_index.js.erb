@@ -1,0 +1,21 @@
+(function() {
+    "use strict";
+
+    function setRunTypeExplanation(run_type_name) {
+        var run_type_explanation = {
+            <%=	raw(TargetPaceHelper.run_type_explanations) %>
+        };
+        var explanation = document.getElementById('run_type_explanation');
+        explanation.innerHTML = run_type_explanation[run_type_name];
+    }
+
+    function selectedRunType() {
+        return document.getElementById('run_type').value;
+    }
+
+    $('[name="run_type"]').on("change", function () {
+        setRunTypeExplanation(selectedRunType())
+    });
+
+    setRunTypeExplanation(selectedRunType());
+})();

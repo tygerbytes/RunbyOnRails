@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+    database:
+      image: postgres:9.6
+      ports:
+          - '5432:5432'
+      volumes:
+          - database:/var/lib/postgresql/data
+      env_file:
+          - .runbyonrails_db.env    
+
+    runbyonrails:
+        build: .
+        links: 
+            - database
+        volumes:
+            - .:/runbyonrails
+        ports:
+            - '3000:3000'
+        env_file:
+            - .runbyonrails.env
+            - .gitcommit.env
+
+volumes:
+    database:
+
