@@ -46,6 +46,9 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
 
+  # Brakeman static security analysis
+  gem 'brakeman', :require => false
+
   # 2016-12-26: To get real_favicon to work, had to change https to http in favicon_generator.rb. It had an issue with SSL.
   # gem 'rails_real_favicon'
 end
