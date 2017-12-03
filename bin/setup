@@ -18,8 +18,8 @@ chdir APP_ROOT do
   system! 'gem install bundler --conservative'
   system('bundle check') || system!('bundle install')
 
-  puts "\n== Setting up Git hooks =="
-  system! 'cp -vr config/githooks/* .git/hooks'
+  # == Set up Git hooks ==
+  system! 'bin/setup_git_hooks'
 
   puts "\n== Preparing database =="
   system! 'bin/rails db:setup'
