@@ -20,7 +20,7 @@ services:
             - '3000:3000'
         env_file:
             - .runbyonrails.env
-            - .gitcommit.env
+            - .gitcommit.env.pub
 
 volumes:
     database:

@@ -7,7 +7,7 @@
 exec 1>&2
 
 # Output COMMIT hash to .env file if we're on master
-gitCommitFile=.gitcommit.env
+gitCommitFile=.gitcommit.env.pub
 branch=$(git rev-parse --abbrev-ref HEAD)
 if [ "$branch" = "master" ]
 then

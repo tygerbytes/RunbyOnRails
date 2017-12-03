@@ -9,7 +9,7 @@ See the [Gemfile](Gemfile) for the requisite versions of Ruby and Rails.
 We use Docker Compose to ease development and deployment. Note that you will need to run Linux or Mac OSX. Expect to suffer if you are on Windows. Sorry.
 
 ### Run `bin/setup`
-After cloning the repo, run [`bin/setup`](bin/setup) to set up things like Git hooks. (A post-commit hook is used to store the commit hash in `.gitcommit.env`)
+After cloning the repo, run [`bin/setup`](bin/setup) to set up things like Git hooks. (A post-commit hook is used to store the commit hash in `.gitcommit.env.pub`)
 
 ### Set environment variables in .env files
 [docker-compose.yml](docker-compose.yml) is configured to pull in environment variables from the `.env` files. Copy the `*.env.templates` files and remove the `.template` extension. Edit the files and enter your custom environment variables.
