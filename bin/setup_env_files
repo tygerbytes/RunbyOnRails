@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+require 'pathname'
+require 'fileutils'
+include FileUtils
+
+# path to your application root.
+APP_ROOT = Pathname.new File.expand_path('../../', __FILE__)
+
+def system!(*args)
+  system(*args) || abort("\n== Command #{args} failed ==")
+end
+
+chdir APP_ROOT do
+  puts "\n== Setting up local .env files =="
+  files_created = false
+  Dir.glob('*.env.template') do |template|
+    env_file = template.to_s.sub(/\.template$/, '')
+    if File.exists? env_file
+      puts "Already exists: #{env_file}"
+    else
+      puts "Creating from template: #{env_file}"
+      FileUtils.cp template, env_file, preserve: true
+      files_created = true
+    end
+  end
+  puts 'Don\'t forget to customize the .env files with values for your environment.' if files_created
+end
