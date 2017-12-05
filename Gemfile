@@ -16,7 +16,7 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails'
 
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier', '>= 4.0.1'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -62,7 +62,7 @@ group :production do
   # ...
 end
 
-gem 'autoprefixer-rails'
+gem 'autoprefixer-rails', '>= 7.2.0'
 
 # Bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
