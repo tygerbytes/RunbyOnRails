@@ -7,7 +7,6 @@ COPY .docker_config .docker_config
 # - build-essential: To ensure certain gems can be compiled
 # - nodejs: Compile assets
 # - libpq-dev: Communicate with postgres through the postgres gem
-# - git: required by the runby-pace gem
 #
 RUN .docker_config/update_apt_sources.sh \
  && apt-get update \
@@ -16,8 +15,7 @@ RUN .docker_config/update_apt_sources.sh \
         nodejs \
         libpq-dev \
         libev-dev \
-        postgresql-client-9.6 --fix-missing --no-install-recommends \
-        git
+        postgresql-client-9.6 --fix-missing --no-install-recommends
 	
 # Set an environment variable to store where the app is installed inside the image.
 #
