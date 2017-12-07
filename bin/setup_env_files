@@ -13,13 +13,13 @@ end
 chdir APP_ROOT do
   puts "\n== Setting up local .env files =="
   files_created = false
-  Dir.glob('*.env.template') do |template|
-    env_file = template.to_s.sub(/\.template$/, '')
+  Dir.glob('*.env.template') do |template_file|
+    env_file = ".#{template_file.to_s.sub(/\.template$/, '')}"
     if File.exists? env_file
       puts "Already exists: #{env_file}"
     else
       puts "Creating from template: #{env_file}"
-      FileUtils.cp template, env_file, preserve: true
+      FileUtils.cp template_file, env_file, preserve: true
       files_created = true
     end
   end
