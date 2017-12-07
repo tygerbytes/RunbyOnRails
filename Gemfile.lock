@@ -118,7 +118,7 @@ GEM
     rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
-    runby_pace (0.61.160)
+    runby_pace (0.62.3)
     sass (3.5.3)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -171,7 +171,7 @@ DEPENDENCIES
   pg (~> 0.19.0)
   puma (~> 3.0)
   rails (~> 5.1.4)
-  runby_pace (= 0.61.160)
+  runby_pace (= 0.62.3)
   sass-rails
   turbolinks (~> 5)
   uglifier (>= 4.0.1)
