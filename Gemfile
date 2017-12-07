@@ -69,4 +69,4 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootswatch-rails'
 
 # RunbyPace, the gem where all the goodness happens: https://github.com/tygerbytes/runby-pace
-gem 'runby_pace', '0.62.3'
+gem 'runby_pace', '0.62.7'
