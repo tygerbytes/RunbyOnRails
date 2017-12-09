@@ -4,4 +4,4 @@
 Running `bin/setup` will copy the hooks in this folder to `.git/hooks`, if the directory exists.
 
 ## post-commit
-Creates an .env file called `.gitcommit.env.pub`. This file contains the most recent commit hash and is used to deploy an environment variable called COMMIT to the Docker container.
+Creates a file called `public/gitcommit.txt`.

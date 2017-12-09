@@ -6,12 +6,17 @@
 # Redirect output to stderr.
 exec 1>&2
 
-# Output COMMIT hash to .env file if we're on master
-gitCommitFile=.gitcommit.env.pub
+# Write COMMIT hash to public file
+gitCommitFile=./public/gitcommit.txt
+
 branch=$(git rev-parse --abbrev-ref HEAD)
-if [ "$branch" = "master" ]
+# Warn if we are not on master
+if [ "$branch" != "master" ]
 then
-    echo \# This file was created by a post commit hook > ${gitCommitFile}
-    echo COMMIT=`git rev-parse --verify HEAD` >> ${gitCommitFile}
-    echo Wrote commit hash to \"${gitCommitFile}\"
+    echo Warning: Generating ${gitCommitFile}, but we are not on "master"
 fi
+
+echo \# This file was created by a post commit hook > ${gitCommitFile}
+echo COMMIT=`git rev-parse --verify HEAD` >> ${gitCommitFile}
+chmod 644 ${gitCommitFile}
+echo Wrote commit hash to \"${gitCommitFile}\" and set its permissions

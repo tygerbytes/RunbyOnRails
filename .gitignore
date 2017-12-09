@@ -31,8 +31,7 @@
 
 # Ignore any files with environment variables!
 *.env
-# Ignore these environment files too, but they aren't as bad
-*.env.pub
 
 /public/keybase.txt
+/public/gitcommit.txt
 
