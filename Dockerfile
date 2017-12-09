@@ -42,6 +42,10 @@ COPY . .
 #
 RUN bundle exec rake RAILS_ENV=production DATABASE_URL=postgresql://user:pass@127.0.0.1/dbname SECRET_TOKEN=supersecuretoken assets:precompile
 
+# Make the latest commit hash available in public
+#
+COPY public/gitcommit.txt public/gitcommit.txt
+
 # Set the correct file permissions on the public directory
 #
 RUN chmod -R 755 "$INSTALL_PATH/public"
