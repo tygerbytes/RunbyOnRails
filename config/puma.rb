@@ -1,6 +1,20 @@
-# Listen on a specific TCP address. We won't bother using unix sockets because
-#  nginx will be running in a different Docker container.
-bind "tcp://#{ENV.fetch('PUMA_LISTEN_ON') || '0.0.0.0:3000'}"
+
+# Bind to a specific TCP address, or listen on specific port?
+# It depends on whether or not Rails is running in a container.
+#
+if ENV['RAILS_CONTAINERIZED'] || false
+
+  # Listen on a specific TCP address. We won't bother using unix sockets because
+  #  nginx will be running in a different Docker container.
+
+  bind "tcp://#{ENV.fetch('PUMA_LISTEN_ON') || '0.0.0.0:3000'}"
+
+else
+  # Listen on the configured port, or default to 3000.
+  # Heroku sets a random port.
+
+  port ENV.fetch('PORT') || 3000
+end
 
 # Puma can serve each request in a thread from an internal thread pool.
 # The `threads` method setting takes two numbers a minimum and maximum.
@@ -30,6 +44,7 @@ workers ENV.fetch("WEB_CONCURRENCY") { 2 }
 #
 # Under most situations you will not have to tweak this value, which is why it
 # is coded into the config rather than being an environment variable.
+#
 worker_timeout 30
 
 # Use the `preload_app!` method when specifying a `workers` number.
@@ -53,5 +68,6 @@ on_worker_boot do
 end
 
 # Allow puma to be restarted by `rails restart` command.
+#
 plugin :tmp_restart
 
