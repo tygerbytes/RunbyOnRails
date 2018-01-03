@@ -1,6 +1,5 @@
-# Listen on a specific TCP address. We won't bother using unix sockets because
-#  nginx will be running in a different Docker container.
-# bind "tcp://#{ENV.fetch('PUMA_LISTEN_ON') || '0.0.0.0:3000'}"
+# Listen on a the random port set by Heroku, or 3000
+#
 port ENV.fetch('PORT') || 3000
 
 # Puma can serve each request in a thread from an internal thread pool.
