@@ -1,9 +1,7 @@
 language: ruby
 rvm:
 - 2.4.2
-before_install: gem install bundler -v 1.16
-git:
-  depth: 1024
+before_install: gem install bundler -v 1.16.1
 notifications:
   email:
     on_success: always
