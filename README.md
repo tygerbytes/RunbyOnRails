@@ -3,6 +3,13 @@ The open-source branch of the RunbyPace app (see https://runbypace.com). RunbyPa
 
 [![RunbyPace logo](runbypace_logo.png)](https://runbypace.com)
 
+| | |
+| --- | --- |
+| **Build** | [![Build Status](https://travis-ci.org/tygerbytes/RunbyOnRails.svg?branch=master)](https://travis-ci.org/tygerbytes/RunbyOnRails) |
+| **Grade** | [![Codacy Badge](https://api.codacy.com/project/badge/Grade/7a4cea75f4e34fcab6f6a847e27d548e)](https://www.codacy.com/app/tygerbytes/RunbyOnRails?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tygerbytes/RunbyOnRails&amp;utm_campaign=Badge_Grade)
+
+[![Build history](https://buildstats.info/travisci/chart/tygerbytes/RunbyOnRails)](https://travis-ci.org/tygerbytes/RunbyOnRails/builds)
+
 See the [Gemfile](Gemfile) for the requisite versions of Ruby and Rails.
 
 ## Up and developing
