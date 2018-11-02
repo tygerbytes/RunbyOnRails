@@ -1,4 +1,4 @@
-FROM ruby:2.4.2-slim
+FROM ruby:2.5.3
 MAINTAINER Ty Walls <tygertec.com>
 
 COPY .docker_config .docker_config
@@ -16,7 +16,7 @@ RUN .docker_config/update_apt_sources.sh \
         libpq-dev \
         libev-dev \
         postgresql-client-9.6 --fix-missing --no-install-recommends
-	
+
 # Set an environment variable to store where the app is installed inside the image.
 #
 ENV INSTALL_PATH /runbyonrails
